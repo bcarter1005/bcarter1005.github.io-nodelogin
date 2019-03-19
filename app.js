@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
+var compression = require('compression'); //
 
 //initializes app variable with express
 const app = express();
@@ -12,7 +13,7 @@ const app = express();
 require('./config/passport')(passport);
 
 //config DB
-const db = require('./config/keys').MongoUri;
+const db = require('./config/keys').mongoDB; //
 
 //connect to mongo
 mongoose.connect(db, {useNewUrlParser: true})
@@ -22,6 +23,8 @@ mongoose.connect(db, {useNewUrlParser: true})
 // EJS middlewar
 app.use(expresslayouts);
 app.set('view engine', 'ejs');
+
+app.use(compression()); //Compress all routes
 
 //bodyparser middlewar
 app.use(express.urlencoded({ extended: false }));

@@ -1,6 +1,9 @@
 {
   "name": "login",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.14.2"
+  },
   "description": "\"node password login\"",
   "main": "app.js",
   "scripts": {
@@ -11,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
     "connect-flash": "^0.1.1",
     "ejs": "^2.6.1",
     "ejs-lint": "^0.3.0",
