@@ -13,7 +13,7 @@ const app = express();
 require('./config/passport')(passport);
 
 //config DB
-const db = require('./config/keys').mongoDB; //
+const db = require('./config/keys').MongoUri //
 
 //connect to mongo
 mongoose.connect(db, {useNewUrlParser: true})
